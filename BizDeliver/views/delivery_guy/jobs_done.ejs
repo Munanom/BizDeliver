@@ -1,0 +1,27 @@
+<h2>Complete Jobs</h2>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Contact Name</th>
+            <th>Location</th>
+            <th>Contact Info</th>
+            <th>Job Description</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% myJobs.forEach((job) => { %>
+            <tr>
+                <td><%= job.contactName %></td>
+                <td><%= job.location %></td>
+                <td><%= job.contactInfo %></td>
+                <td><%= job.jobDescription %></td>
+                <td><%= job.assignedTo %></td>
+                <td><%= job.status %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<nav class="mt-3">
+    <a href="/delivery-guy" class="btn btn-primary">Back to Dashboard</a>

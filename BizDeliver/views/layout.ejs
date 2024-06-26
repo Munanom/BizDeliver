@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Delivery Management System</title>
+</head>
+<body>
+    <header class="bg-dark text-white d-flex justify-content-between align-items-center py-3 px-4">
+        <h1>Delivery Management System</h1>
+        <nav>
+            <% if (user && user.role === 'manager') { %>
+                
+
+            <% } else if (user && user.role === 'deliveryguy') { %>
+                <a href="/delivery-guy" class="btn btn-primary mx-2">Dashboard</a>
+                <a href="/delivery-guy/jobs-done" class="btn btn-primary mx-2">Jobs Done</a>
+            <% } %>
+            <form id="logout-form" action="/logout" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-link text-white">
+                    <i class="fas fa-sign-out-alt fa-2x"></i>
+                </button>
+            </form>
+        </nav>
+    </header>
+    <main class="container my-4">
+        <%- include(content) %>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

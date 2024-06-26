@@ -1,0 +1,41 @@
+<style>
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 70vh;
+
+    }
+
+    .image-container img {
+        width: 70%;
+        opacity: 0.2;
+
+
+    }
+</style>
+<h2>Manager Dashboard</h2>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/manager">Dashboard</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/manager/assign-job">Assign Job</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manager/jobs-assigned">View All Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manager/jobs-done">Completed Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/manager/jobs-pending">Pending Jobs</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="content-area">
+    <div class="image-container">
+        <img src="/images/deliver.png" alt="Small Image">
+    </div>
+</div>

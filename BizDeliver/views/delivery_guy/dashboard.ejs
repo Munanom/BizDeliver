@@ -1,0 +1,31 @@
+<h2>Delivery Guy Dashboard</h2>
+<ul class="list-group">
+    <% myJobs.filter(job => job.status !== 'complete').forEach((job) => { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <p><strong>Description:</strong> <%= job.jobDescription %></p>
+                <p><strong>Contact Name:</strong> <%= job.contactName %></p>
+                <p><strong>Location:</strong> <%= job.location %></p>
+                <p><strong>Contact Info:</strong> <%= job.contactInfo %></p>
+                <p><strong>Status:</strong> <%= job.status %></p>
+            </div>
+            <div>
+                <!-- For marking a job as "done" -->
+                <form action="/update-job-status" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="<%= job.id %>">
+                    <button type="submit" name="status" value="complete" class="btn btn-success btn-sm">Done</button>
+                </form>
+
+                <!-- For marking a job as "not done" -->
+                <form action="/update-job-status" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="<%= job.id %>">
+                    <button type="submit" name="status" value="pending" class="btn btn-danger btn-sm">Not Done</button>
+                </form>
+            </div>
+        </li>
+    <% }) %>
+</ul>
+
+<nav class="mt-3">
+    <a href="/delivery-guy/jobs-done" class="btn btn-primary">View Done Jobs</a>
+</nav>
